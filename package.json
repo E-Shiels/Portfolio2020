@@ -67,5 +67,8 @@
     "js-watch": "npm run js-build -- --watch",
     "start": "npm-run-all --parallel css-watch js-watch"
   },
-  "version": "0.0.3"
+  "version": "0.0.3",
+  "dependencies": {
+    "bulmaswatch": "^0.7.2"
+  }
 }
