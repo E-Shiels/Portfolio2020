@@ -35,6 +35,7 @@
   "deprecated": false,
   "description": "Start package for Bulma",
   "devDependencies": {
+    "@vizuaalog/bulmajs": "^0.10.1",
     "autoprefixer": "^9.4.7",
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
