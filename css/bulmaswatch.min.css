@@ -11389,16 +11389,16 @@ print {
 
 .hero-body,
 .section {
-    padding: 3rem 1.5rem
+    padding: 2.5rem 1.5rem
 }
 
 @media screen and (min-width:1024px) {
     .section.is-medium {
-        padding: 9rem 1.5rem
+        padding: 8rem 1.5rem
     }
 
     .section.is-large {
-        padding: 18rem 1.5rem
+        padding: 16rem 1.5rem
     }
 }
 
