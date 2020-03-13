@@ -2,6 +2,14 @@
     margin-bottom: 0.3em;
 }
 
+i {
+    margin-right: 8%;
+}
+
+#social-links {
+    margin: 1.5vh 0 2.5vh 0;
+}
+
 /*
 #subheader {
 margin-left: 0.3rem;
