@@ -234,14 +234,10 @@
           <!-- <h4 class="subtitle is-5">Get in touch</h4> -->
         </div>
         <br />
+        Thank you for taking the time to learn more about me. Feel free to check
+        out my GiHub and LinkedIn profiles using the buttons below. You can also
+        drop me a line using the contact form below. <b>Thanks!</b>
 
-        <div class="columns">
-          <div class="column is-6 is-offset-3">
-            <div class="box">
-              <div class="field">
-                <label class="label">Name</label>
-                <div class="control">
-                  <input class="input" type="text" placeholder="Text input" />
         <div id="social-links">
           <a href="#" class="button is-link"
             ><i class="devicon-github-plain"></i>Github</a
@@ -250,49 +246,61 @@
             ><i class="fa fa-linkedin-square"></i>LinkedIn</a
           >
         </div>
-                </div>
-              </div>
 
-              <div class="field">
-                <label class="label">Email</label>
-                <div class="control has-icons-left">
-                  <input
-                    class="input"
-                    type="email"
-                    placeholder="email@email.com"
-                    value=""
-                  />
-                  <span class="icon is-small is-left">
-                    <i class="fas fa-envelope"></i>
-                  </span>
-                      <i class="fas fa-envelope"></i>
+        <form name="contact method="POST" data-netlify="true">
+          <div class="columns">
+            <div class="column is-6 is-offset-3">
+              <div class="box">
+                <div class="field">
+                  <label class="label" for="contact-name">Name</label>
+                  <div class="control">
+                    <input class="input" type="text" placeholder="Text input"  name="name" id="contact-name"/>
+                  </div>
                 </div>
-              </div>
 
-              <div class="field">
-                <label class="label">Message</label>
-                <div class="control">
-                  <textarea
-                    class="textarea"
-                    placeholder="Your message goes here. "
-                  ></textarea>
-                </div>
-              </div>
-
-              <div class="field is-grouped has-text-centered">
-                <div class="control">
-                  <button class="button is-link is-large">
-                    <span class="icon">
+                <div class="field">
+                  <label class="label" for="contact-email">Email</label>
+                  <div class="control has-icons-left">
+                    <input
+                      class="input"
+                      type="email"
+                      placeholder="email@email.com
+                      value=""
+                      name="email"
+                      id="contact-email"
+                    />
+                    <span class="icon is-small is-left">
                       <i class="fas fa-envelope"></i>
                     </span>
-                    <span>Submit</span>
-                  </button>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label class="label" for="contact-message">Message</label>
+                  <div class="control">
+                    <textarea
+                      class="textarea"
+                      placeholder="Your message goes here. "
+                      name="message"
+                      id="contact-message"
+                    ></textarea>
+                  </div>
+                </div>
+
+                <div class="field is-grouped has-text-centered">
+                  <div class="control">
+                    <button class="button is-link is-large">
+                      <span class="icon">
                         <i class="fas fa-envelope"></i>
+                      </span>
+                      <span>Submit</span>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </form>
       </div>
     </section>
 
