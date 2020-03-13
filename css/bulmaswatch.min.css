@@ -7417,14 +7417,14 @@ html.has-navbar-fixed-bottom {
     display: block;
     height: 5rem;
     position: relative;
-    width: 5rem;
+    width: 6rem;
     margin-left: auto
 }
 
 .navbar-burger span {
     background-color: currentColor;
     display: block;
-    height: 1px;
+    height: 2px;
     left: calc(50% - 8px);
     position: absolute;
     transform-origin: center;
