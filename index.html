@@ -251,7 +251,7 @@
           >
         </div>
 
-        <form name="contact" data-netlify="true" data-netlify-recaptcha="true">
+        <form name="contact" data-netlify="true" data-netlify-recaptcha="true" netlify-honeypot="bot-field">
           <div class="columns">
             <div class="column is-6 is-offset-3">
               <div class="box">
@@ -296,9 +296,14 @@
                     ></textarea>
                   </div>
                 </div>
-                
-                <div data-netlify-recaptcha="true"></div>
 
+                <div data-netlify-recaptcha="true"></div>
+                <p class="hidden">
+                  <label
+                    >Don’t fill this out if you're human:
+                    <input name="bot-field"
+                  /></label>
+                </p>
                 <div class="field is-grouped has-text-centered">
                   <div class="control">
                     <button class="button is-link is-large" type="submit">

@@ -14,3 +14,7 @@ i {
 #social-links {
     margin: 1.5vh 0 2.5vh 0;
 }
+
+.hidden {
+    visibility: hidden;
+}
