@@ -45,6 +45,7 @@ i {
 
 .icon-container {
     margin-bottom: 20px;
-    max-width: 28%;
+    width: 28%;
+    max-width:  120px;
     margin-right: 5%;
 }
