@@ -70,6 +70,7 @@
   },
   "version": "0.0.3",
   "dependencies": {
-    "bulmaswatch": "^0.7.5"
+    "bulmaswatch": "^0.7.5",
+    "minimist": "^1.2.5"
   }
 }
