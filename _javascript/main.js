@@ -26,7 +26,9 @@ document.addEventListener('DOMContentLoaded', function() {
               );
           });
       }
-      console.error(`Error with fetching random placeholder name: ${response.status}`);
+      console.error(
+        `Error with fetching random placeholder name: ${response.status}`
+      );
       return;
     }
     response.json().then(json => {
