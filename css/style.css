@@ -5,6 +5,16 @@ html {
 
 #name {
     margin-bottom: 0.3em;
+    z-index: 500;
+    position: relative;
+}
+
+#nameOverlay {
+    position: fixed;
+    top: 1rem;
+    display: none;
+    z-index: 600;
+}
 }
 
 i {

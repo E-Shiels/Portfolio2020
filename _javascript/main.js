@@ -35,4 +35,37 @@ document.addEventListener('DOMContentLoaded', function() {
         .setAttribute('placeholder', `${json.name} ${json.surname}`);
     });
   });
+
+  let last_known_scroll_position = 0;
+  let ticking = false;
+  let nameHidden = false;
+
+  function handleScrollHideOfHeader(scroll_pos) {
+    const name = document.getElementById('name');
+    const nameRect = name.getBoundingClientRect();
+    const nameOverlay = document.getElementById('nameOverlay');
+
+    if (nameHidden === false && nameRect.top < 6.1) {
+      name.style.color = '#4582ec';
+      nameHidden = true;
+      nameOverlay.style.display = "block"
+    } else if (nameHidden === true && nameRect.top >= 6.1) {
+      name.style.color = 'white';
+      nameHidden = false;
+      nameOverlay.style.display = 'none';
+    }
+  }
+
+  window.addEventListener('scroll', function(e) {
+    last_known_scroll_position = window.scrollY;
+
+    if (!ticking) {
+      window.requestAnimationFrame(function() {
+        handleScrollHideOfHeader(last_known_scroll_position);
+        ticking = false;
+      });
+
+      ticking = true;
+    }
+  });
 });
