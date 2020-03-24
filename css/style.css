@@ -9,6 +9,10 @@ html {
     position: relative;
 }
 
+.image {
+    margin-bottom: 1rem;
+}
+
 #nameOverlay {
     position: fixed;
     top: 1rem;
@@ -27,7 +31,7 @@ html {
 }
 
 a.button {
-    padding: 0.75em;
+    padding: 0.65em;
 }
 
 #resume-container {
