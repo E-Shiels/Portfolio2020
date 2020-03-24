@@ -47,11 +47,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const nameRect = name.getBoundingClientRect();
     const nameOverlay = document.getElementById('nameOverlay');
 
-    if (nameHidden === false && nameRect.top < 6.1) {
+    if (nameHidden === false && nameRect.top < 10) {
       name.style.color = '#4582ec';
       nameHidden = true;
       nameOverlay.style.display = "block"
-    } else if (nameHidden === true && nameRect.top >= 6.1) {
+    } else if (nameHidden === true && nameRect.top >= 10) {
       name.style.color = 'white';
       nameHidden = false;
       nameOverlay.style.display = 'none';
