@@ -7,39 +7,39 @@ document.addEventListener('DOMContentLoaded', function () {
     menu.classList.toggle('is-active');
   });
 
-  fetch(
-    'https://cors-anywhere.herokuapp.com/https://randomuser.me/api/?inc=name&nat=ca&noinfo'
-  ).then((response) => {
-    if (response.status !== 200) {
-      if (response.status === 429) {
-        fetch('names.json')
-          .then((response) => {
-            return response.json();
-          })
-          .then((json) => {
-            const jsonName = json[Math.floor(Math.random() * json.length)];
-            document
-              .getElementById('contact-name')
-              .setAttribute(
-                'placeholder',
-                `${jsonName.name} ${jsonName.surname}`
-              );
-          });
-      }
-      console.error(
-        `Error with fetching random placeholder name: ${response.status}`
-      );
-      return;
-    }
-    response.json().then((json) => {
-      document
-        .getElementById('contact-name')
-        .setAttribute(
-          'placeholder',
-          `${json.results[0].name.first} ${json.results[0].name.last}`
-        );
-    });
-  });
+  // fetch(
+  //   'https://cors-anywhere.herokuapp.com/https://randomuser.me/api/?inc=name&nat=ca&noinfo'
+  // ).then((response) => {
+  //   if (response.status !== 200) {
+  //     if (response.status === 429) {
+  //       fetch('names.json')
+  //         .then((response) => {
+  //           return response.json();
+  //         })
+  //         .then((json) => {
+  //           const jsonName = json[Math.floor(Math.random() * json.length)];
+  //           document
+  //             .getElementById('contact-name')
+  //             .setAttribute(
+  //               'placeholder',
+  //               `${jsonName.name} ${jsonName.surname}`
+  //             );
+  //         });
+  //     }
+  //     console.error(
+  //       `Error with fetching random placeholder name: ${response.status}`
+  //     );
+  //     return;
+  //   }
+  //   response.json().then((json) => {
+  //     document
+  //       .getElementById('contact-name')
+  //       .setAttribute(
+  //         'placeholder',
+  //         `${json.results[0].name.first} ${json.results[0].name.last}`
+  //       );
+  //   });
+  // });
 
   let last_known_scroll_position = 0;
   let ticking = false;
