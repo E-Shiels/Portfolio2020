@@ -1,22 +1,22 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   //Hamburger menu button
   var burger = document.querySelector('.burger');
   var menu = document.querySelector('#' + burger.dataset.target);
-  burger.addEventListener('click', function() {
+  burger.addEventListener('click', function () {
     burger.classList.toggle('is-active');
     menu.classList.toggle('is-active');
   });
 
   fetch(
-    'https://cors-anywhere.herokuapp.com/https://uinames.com/api/?region=canada'
-  ).then(response => {
+    'https://cors-anywhere.herokuapp.com/https://randomuser.me/api/?inc=name&nat=ca&noinfo'
+  ).then((response) => {
     if (response.status !== 200) {
       if (response.status === 429) {
         fetch('names.json')
-          .then(response => {
+          .then((response) => {
             return response.json();
           })
-          .then(json => {
+          .then((json) => {
             const jsonName = json[Math.floor(Math.random() * json.length)];
             document
               .getElementById('contact-name')
@@ -31,10 +31,13 @@ document.addEventListener('DOMContentLoaded', function() {
       );
       return;
     }
-    response.json().then(json => {
+    response.json().then((json) => {
       document
         .getElementById('contact-name')
-        .setAttribute('placeholder', `${json.name} ${json.surname}`);
+        .setAttribute(
+          'placeholder',
+          `${json.results[0].name.first} ${json.results[0].name.last}`
+        );
     });
   });
 
@@ -50,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (nameHidden === false && nameRect.top < 10) {
       name.style.color = '#4582ec';
       nameHidden = true;
-      nameOverlay.style.display = "block"
+      nameOverlay.style.display = 'block';
     } else if (nameHidden === true && nameRect.top >= 10) {
       name.style.color = 'white';
       nameHidden = false;
@@ -58,11 +61,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  window.addEventListener('scroll', function(e) {
+  window.addEventListener('scroll', function (e) {
     last_known_scroll_position = window.scrollY;
 
     if (!ticking) {
-      window.requestAnimationFrame(function() {
+      window.requestAnimationFrame(function () {
         handleScrollHideOfHeader(last_known_scroll_position);
         ticking = false;
       });
