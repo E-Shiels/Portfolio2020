@@ -19,12 +19,46 @@
 
     <link rel="preconnect" href="https://www.google.com" crossorigin />
     <link rel="preconnect" href="https://www.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://use.fontawesome.com" crossorigin />
     <link
       rel="preconnect"
       href="https://www.google-analytics.com"
       crossorigin
     />
+
+    <!--
+  - 1. Preemptively warm up the fonts’ origin.
+  -
+  - 2. Initiate a high-priority, asynchronous fetch for the CSS file. Works in
+  -    most modern browsers.
+  -
+  - 3. Initiate a low-priority, asynchronous fetch that gets applied to the page
+  -    only after it’s arrived. Works in all browsers with JavaScript enabled.
+  -
+  - 4. In the unlikely event that a visitor has intentionally disabled
+  -    JavaScript, fall back to the original method. The good news is that,
+  -    although this is a render-blocking request, it can still make use of the
+  -    preconnect which makes it marginally faster than the default.
+  -->
+
+    <!-- [1] -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- [2] -->
+    <link rel="preload" as="style" href="family=Work+Sans:400,700&display=swap" />
+
+    <!-- [3] -->
+    <link
+      rel="stylesheet"
+      href="family=Work+Sans:400,700&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+
+    <!-- [4] -->
+    <noscript>
+      <link rel="stylesheet" href="family=Work+Sans:400,700&display=swap" />
+    </noscript>
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -41,10 +75,10 @@
       crossorigin="anonymous"
     /> -->
 
-    <link
+    <!-- <link
       href="https://fonts.googleapis.com/css?family=Work+Sans:400,700&display=swap"
       rel="stylesheet"
-    />
+    /> -->
 
     <link
       rel="apple-touch-icon"
@@ -169,9 +203,9 @@
           <h3 class="title is-2" name="about" id="about">About Me</h3>
           <p>
             I'm a developer with professional experience in the healthcare and
-            non-profit sectors, most recently with World Vision Canada. I'm a graduate of the Flatiron School Full-Stack
-            Web Development bootcamp. I'm experienced with a variety of
-            languages, systems, and tools.
+            non-profit sectors, most recently with World Vision Canada. I'm a
+            graduate of the Flatiron School Full-Stack Web Development bootcamp.
+            I'm experienced with a variety of languages, systems, and tools.
           </p>
           <p style="margin-top: 25px;">
             I am open to new opportunities, either in the Greater Toronto Area
@@ -577,7 +611,9 @@
     <section class="section" id="projects">
       <div class="container">
         <div class="section-heading">
-          <h3 class="title is-2" name="projects" style="Margin-bottom: 10px;">Projects</h3>
+          <h3 class="title is-2" name="projects" style="margin-bottom: 10px;">
+            Projects
+          </h3>
           <!-- <h4 class="subtitle is-5">My latest works</h4> -->
         </div>
         <!-- <br /> -->
