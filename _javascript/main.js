@@ -1,10 +1,10 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener('DOMContentLoaded', function () {
   //Hamburger menu button
-  var burger = document.querySelector(".burger");
-  var menu = document.querySelector("#" + burger.dataset.target);
-  burger.addEventListener("click", function () {
-    burger.classList.toggle("is-active");
-    menu.classList.toggle("is-active");
+  var burger = document.querySelector('.burger');
+  var menu = document.querySelector('#' + burger.dataset.target);
+  burger.addEventListener('click', function () {
+    burger.classList.toggle('is-active');
+    menu.classList.toggle('is-active');
   });
 
   // fetch(
@@ -46,18 +46,18 @@ document.addEventListener("DOMContentLoaded", function () {
   let nameHidden = false;
 
   function handleScrollHideOfHeader(scroll_pos) {
-    const name = document.getElementById("name");
+    const name = document.getElementById('name');
     const nameRect = name.getBoundingClientRect();
-    const nameOverlay = document.getElementById("nameOverlay");
+    const nameOverlay = document.getElementById('nameOverlay');
 
     if (nameHidden === false && nameRect.top < 10) {
-      name.style.color = "#4582ec";
+      name.style.color = '#4582ec';
       nameHidden = true;
-      nameOverlay.style.display = "block";
+      nameOverlay.style.display = 'block';
     } else if (nameHidden === true && nameRect.top >= 10) {
-      name.style.color = "white";
+      name.style.color = 'white';
       nameHidden = false;
-      nameOverlay.style.display = "none";
+      nameOverlay.style.display = 'none';
     }
   }
 
